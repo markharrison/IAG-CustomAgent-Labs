@@ -32,7 +32,7 @@ The user gives the Funny Agent a subject (e.g. "cats", "Kubernetes", "Monday mor
 
 ---
 
-## Step 1 — Open the Starter Repository in VS Code
+## Step 1 - Open the Starter Repository in VS Code
 
 You will use the same starter repository from Lab 1. If you no longer have it, re-clone it now (see Lab 1, Step 1).
 
@@ -68,7 +68,7 @@ You will use the same starter repository from Lab 1. If you no longer have it, r
 
 ---
 
-## Step 2 — Understand the Architecture
+## Step 2 - Understand the Architecture
 
 Before writing any files, take a moment to understand how a multi-agent pipeline works.
 
@@ -105,10 +105,10 @@ Before writing any files, take a moment to understand how a multi-agent pipeline
 
 Key concepts:
 
-- **Orchestrator** — The Funny Agent never writes the joke or the HTML itself. It only _delegates_ work to its subagents and manages the pipeline flow.
-- **Subagents** — Each subagent does exactly one job. The Joker writes the joke; the Code agent builds the HTML.
-- **State files** — Subagents communicate through state files in `./output/state/`. The Joker writes `01-joker.md` containing the joke. The Code agent reads that file, then writes `02-code.md` and the HTML deliverable.
-- **Gates** — Between each step the orchestrator can pause for approval or auto-continue.
+- **Orchestrator** - The Funny Agent never writes the joke or the HTML itself. It only _delegates_ work to its subagents and manages the pipeline flow.
+- **Subagents** - Each subagent does exactly one job. The Joker writes the joke; the Code agent builds the HTML.
+- **State files** - Subagents communicate through state files in `./output/state/`. The Joker writes `01-joker.md` containing the joke. The Code agent reads that file, then writes `02-code.md` and the HTML deliverable.
+- **Gates** - Between each step the orchestrator can pause for approval or auto-continue.
 
 > **Tip:**  - delete any existing content in ./output/state/ that is carried over from lab1
 
@@ -116,14 +116,14 @@ Key concepts:
 
 ---
 
-## Step 3 — Use Copilot to Write the Requirements Document
+## Step 3 - Use Copilot to Write the Requirements Document
 
 Just like in Lab 1, you will start by writing a requirements document. This time it describes the full multi-agent system.
 
-### 3.1 — Ask Copilot to draft the requirements
+### 3.1 - Ask Copilot to draft the requirements
 
 1. Open **Copilot Chat**.
-2. Set the mode to **Plan** — click the mode selector at the top of the chat panel and choose **Plan**.
+2. Set the mode to **Plan** - click the mode selector at the top of the chat panel and choose **Plan**.
 
 **screenshot**
 
@@ -134,9 +134,9 @@ Just like in Lab 1, you will start by writing a requirements document. This time
 
    Architecture:
    - An Orchestrator called "Funny Agent" that coordinates a 2-step pipeline.
-   - Subagent 1: "Joker Agent" — receives a subject from the user and writes
+   - Subagent 1: "Joker Agent" - receives a subject from the user and writes
      a short, funny joke about that subject.
-   - Subagent 2: "Code Agent" — reads the joke from the Joker Agent's state
+   - Subagent 2: "Code Agent" - reads the joke from the Joker Agent's state
      file and creates a self-contained HTML web page that displays the joke
      in a visually appealing way with CSS styling.
 
@@ -171,12 +171,12 @@ Just like in Lab 1, you will start by writing a requirements document. This time
 
 **screenshot**
 
-### 3.2 — Review and refine
+### 3.2 - Review and refine
 
 Read through the requirements. Suggested refinements you can ask Copilot:
 
 ```
-Add a constraint that the HTML page must be fully self-contained — no external
+Add a constraint that the HTML page must be fully self-contained - no external
 CSS frameworks, no JavaScript dependencies, just inline CSS and HTML.
 ```
 
@@ -190,14 +190,14 @@ Save the file when you are satisfied.
 
 ---
 
-## Step 4 — Use Copilot to Create the Agents
+## Step 4 - Use Copilot to Create the Agents
 
-Now you will ask Copilot to create all three agents — the orchestrator and both subagents — based on the requirements document. The `custom-agent.instructions.md` file will guide Copilot to produce well-structured agent definitions that follow all the conventions automatically.
+Now you will ask Copilot to create all three agents - the orchestrator and both subagents - based on the requirements document. The `custom-agent.instructions.md` file will guide Copilot to produce well-structured agent definitions that follow all the conventions automatically.
 
-### 4.1 — Ask Copilot to scaffold the agents
+### 4.1 - Ask Copilot to scaffold the agents
 
 1. Open **Copilot Chat**.
-2. Make sure you are in **Agent** mode (not Ask or Plan) — Copilot needs to be able to create files.
+2. Make sure you are in **Agent** mode (not Ask or Plan) - Copilot needs to be able to create files.
 
 **screenshot**
 
@@ -209,15 +209,15 @@ Now you will ask Copilot to create all three agents — the orchestrator and bot
    the orchestrator and both subagents.
 ```
 
-4. Copilot will create the three files. Review each one as it appears — accept the changes and save.
+4. Copilot will create the three files. Review each one as it appears - accept the changes and save.
 
 **screenshot**
 
-### 4.2 — Verify the generated agents
+### 4.2 - Verify the generated agents
 
 Walk through each file and spot-check these key elements:
 
-**Funny Agent** (`.github/agents/funny.agent.md`) — Orchestrator:
+**Funny Agent** (`.github/agents/funny.agent.md`) - Orchestrator:
 
 | Element                 | What to check                                                               |
 | ----------------------- | --------------------------------------------------------------------------- |
@@ -225,7 +225,7 @@ Walk through each file and spot-check these key elements:
 | **Pipeline Definition** | Step table with Joker Agent (Step 1) and Code Agent (Step 2)                |
 | **State Management**    | Describes scanning `./output/state/` and resuming from first unchecked step |
 
-**Joker Agent** (`.github/agents/_subagents/joker.agent.md`) — Subagent:
+**Joker Agent** (`.github/agents/_subagents/joker.agent.md`) - Subagent:
 
 | Element         | What to check                                                             |
 | --------------- | ------------------------------------------------------------------------- |
@@ -233,12 +233,12 @@ Walk through each file and spot-check these key elements:
 | **Workflow**    | Multi-phase workflow ending with the joke written to the state file       |
 | **State file**  | Writes to `./output/state/01-joker.md` with a `## Joke` heading           |
 
-**Code Agent** (`.github/agents/_subagents/code.agent.md`) — Subagent:
+**Code Agent** (`.github/agents/_subagents/code.agent.md`) - Subagent:
 
 | Element                 | What to check                                                            |
 | ----------------------- | ------------------------------------------------------------------------ |
 | **Frontmatter**         | `name: "Code Agent"`, `user-invocable: false`, `tools: ["read", "edit"]` |
-| **Prerequisites Check** | Checks for `./output/state/01-joker.md` — stops if missing               |
+| **Prerequisites Check** | Checks for `./output/state/01-joker.md` - stops if missing               |
 | **Output Files**        | State: `./output/state/02-code.md`, Deliverable: `./output/joke.html`    |
 
 > **Tip:** If anything is missing or looks off, just tell Copilot what to fix in the chat
@@ -247,7 +247,7 @@ Walk through each file and spot-check these key elements:
 
 ---
 
-## Step 5 — Verify the Complete File Structure
+## Step 5 - Verify the Complete File Structure
 
 Before testing, confirm all files are in place.
 
@@ -271,15 +271,15 @@ Before testing, confirm all files are in place.
 
 ---
 
-## Step 6 — Test the Funny Agent Pipeline
+## Step 6 - Test the Funny Agent Pipeline
 
 Time to run the full pipeline!
 
-### 6.1 — Open Copilot Chat
+### 6.1 - Open Copilot Chat
 
 1. Open **Copilot Chat**.
 
-### 6.2 — Invoke the Funny Agent
+### 6.2 - Invoke the Funny Agent
 
 1. Select **Funny Agent** from the agent dropdown (where it normally says Agent | Ask | Plan).
 
@@ -295,20 +295,20 @@ Time to run the full pipeline!
 
 **screenshot**
 
-### 6.3 — Observe the pipeline execution
+### 6.3 - Observe the pipeline execution
 
 As the Funny Agent runs, you should see it:
 
-1. **Extract the subject** — "cats who judge you silently"
-2. **Invoke the Joker Agent** — the Joker writes the joke to `./output/state/01-joker.md`
-3. **Invoke the Code Agent** — the Code Agent reads the joke and creates `./output/joke.html`
-4. **Present the result** — the Funny Agent shows you the joke and points you to the HTML file
+1. **Extract the subject** - "cats who judge you silently"
+2. **Invoke the Joker Agent** - the Joker writes the joke to `./output/state/01-joker.md`
+3. **Invoke the Code Agent** - the Code Agent reads the joke and creates `./output/joke.html`
+4. **Present the result** - the Funny Agent shows you the joke and points you to the HTML file
 
 > **Tip:** Keep the Explorer panel open so you can watch the `output/` folder populate in real time as each subagent does its work.
 
 **screenshot**
 
-### 6.4 — Check the output files
+### 6.4 - Check the output files
 
 1. In the Explorer panel, expand the `output/` folder. You should see:
 
@@ -318,16 +318,16 @@ As the Funny Agent runs, you should see it:
    │   ├── 00-funny-agent.md     ← Orchestrator pipeline state
    │   ├── 01-joker.md           ← Joker's state (contains the joke)
    │   └── 02-code.md            ← Code Agent's state
-   └── joke.html                 ← The deliverable — your joke web page!
+   └── joke.html                 ← The deliverable - your joke web page!
 ```
 
-2. Open `01-joker.md` — confirm it contains the joke text under a `## Joke` heading.
-3. Open `02-code.md` — confirm it shows all phases checked off.
-4. Open `00-funny-agent.md` — confirm both pipeline steps are marked complete.
+2. Open `01-joker.md` - confirm it contains the joke text under a `## Joke` heading.
+3. Open `02-code.md` - confirm it shows all phases checked off.
+4. Open `00-funny-agent.md` - confirm both pipeline steps are marked complete.
 
 ![catjoke](images/catjoke.jpg)
 
-### 6.5 — View the HTML page
+### 6.5 - View the HTML page
 
 1. Right-click on `output/joke.html` in the Explorer panel.
 2. Select **Open with Live Server** (if you have the Live Server extension) or **Reveal in File Explorer** and open the file in your browser.
@@ -335,7 +335,7 @@ As the Funny Agent runs, you should see it:
 
 **screenshot**
 
-### 6.6 — Try more subjects
+### 6.6 - Try more subjects
 
 Run the pipeline a few more times with different subjects:
 
@@ -357,9 +357,9 @@ Run the pipeline a few more times with different subjects:
 
 ---
 
-## Step 7 — Refine and Iterate
+## Step 7 - Refine and Iterate
 
-### 7.1 — Improve the joke quality
+### 7.1 - Improve the joke quality
 
 Open `joker.agent.md` and ask Copilot:
 
@@ -369,7 +369,7 @@ jokes and picks the funniest one. Include a brief explanation in the
 state file of why it chose that joke.
 ```
 
-### 7.2 — Improve the HTML page
+### 7.2 - Improve the HTML page
 
 Open `code.agent.md` and ask Copilot:
 
@@ -381,20 +381,20 @@ Update the Code Agent so the HTML page includes:
 - A footer that says "Generated by the Funny Agent pipeline"
 ```
 
-### 7.3 — Add an approval gate
+### 7.3 - Add an approval gate
 
 If you want to review the joke before it gets turned into HTML, edit `funny.agent.md` and change the pipeline table:
 
 ```markdown
 | Step | Subagent    | State File    | Deliverables         | Gate     | On Fail    |
 | ---- | ----------- | ------------- | -------------------- | -------- | ---------- |
-| 1    | Joker Agent | `01-joker.md` | —                    | Approval | Stop       |
-| 2    | Code Agent  | `02-code.md`  | `./output/joke.html` | —        | Retry once |
+| 1    | Joker Agent | `01-joker.md` | -                    | Approval | Stop       |
+| 2    | Code Agent  | `02-code.md`  | `./output/joke.html` | -        | Retry once |
 ```
 
 Now the orchestrator will pause after the Joker finishes and show you the joke. You can approve it or ask for a new one before the Code Agent runs.
 
-### 7.4 — Change the models
+### 7.4 - Change the models
 
 Experiment with different models for the subagents:
 
@@ -417,15 +417,15 @@ Congratulations! 🎉 You have completed Lab 2. Here is what you built:
 | `joker.agent.md`        | `.github/agents/_subagents/` | Subagent that writes jokes about a given subject.        |
 | `code.agent.md`         | `.github/agents/_subagents/` | Subagent that builds an HTML page to display the joke.   |
 | `output/state/`         | Created at runtime           | State files written by each agent for progress tracking. |
-| `output/joke.html`      | Created at runtime           | The deliverable — a styled HTML page showing the joke.   |
+| `output/joke.html`      | Created at runtime           | The deliverable - a styled HTML page showing the joke.   |
 
 ### Key takeaways
 
-1. **Orchestrators delegate — they never do the work themselves.** The Funny Agent extracts the subject and manages the pipeline, but the Joker writes the joke and the Code Agent builds the HTML.
+1. **Orchestrators delegate - they never do the work themselves.** The Funny Agent extracts the subject and manages the pipeline, but the Joker writes the joke and the Code Agent builds the HTML.
 2. **Subagents communicate through state files.** The Joker writes `01-joker.md` with the joke; the Code Agent reads it. This clean handoff pattern makes each agent independently testable and replaceable.
 3. **Gates give you control.** You can choose `Auto` gates for a seamless flow or `Approval` gates when you want to review intermediate results before continuing.
 4. **Pipelines are composable.** You could add a third subagent (e.g., a "Translator Agent" that translates the joke into another language) just by adding a row to the pipeline table and creating a new subagent file.
-5. **The instruction file handles the conventions.** You focused on _what_ each agent should do — Copilot handled the _how_ thanks to `custom-agent.instructions.md`.
+5. **The instruction file handles the conventions.** You focused on _what_ each agent should do - Copilot handled the _how_ thanks to `custom-agent.instructions.md`.
 
 ---
 
@@ -433,9 +433,9 @@ Congratulations! 🎉 You have completed Lab 2. Here is what you built:
 
 Ideas to extend the lab on your own:
 
-- **Add a Translator subagent** — Step 3 translates the joke into a user-requested language before the Code Agent builds the page.
-- **Add a Review subagent** — Step 1.5 reviews the joke for quality and asks the Joker to regenerate if it's not funny enough.
-- **Persist a joke gallery** — Modify the Code Agent to append jokes to a `joke-gallery.html` file instead of overwriting, building up a collection over time.
+- **Add a Translator subagent** - Step 3 translates the joke into a user-requested language before the Code Agent builds the page.
+- **Add a Review subagent** - Step 1.5 reviews the joke for quality and asks the Joker to regenerate if it's not funny enough.
+- **Persist a joke gallery** - Modify the Code Agent to append jokes to a `joke-gallery.html` file instead of overwriting, building up a collection over time.
 
 ---
 

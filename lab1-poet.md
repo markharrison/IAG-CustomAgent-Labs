@@ -106,7 +106,7 @@ A good practice before building any agent is to describe _what_ it should do in 
 ### 4.1 — Ask Copilot to draft the requirements
 
 1. Open the **Copilot Chat** panel
-2. Make sure you're in **Plan** mode — click the mode selector at the top of the chat panel and choose **Plan** if it is not already selected. We use Plan mode here because we are _planning_ what the agent should do, not asking Copilot to run tools or edit files.
+2. Make sure you're in **Plan** mode — click the agent selector at the bottom of the chat panel and choose **Plan** if it is not already selected. We use Plan mode here because we are _planning_ what the agent should do, not asking Copilot to run tools or edit files.
 
 **screenshot**
 

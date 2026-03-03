@@ -4,7 +4,7 @@
 
 In this lab you will create a **GitHub Copilot Custom Agent** called the **Poet Agent**. When a user invokes this agent, it writes a funny limerick about whatever subject they provide.
 
-You will use GitHub Copilot itself to help you scaffold the agent — so you'll experience both _building_ a custom agent **and** _using_ Copilot as your coding partner.
+You will use GitHub Copilot itself to help you scaffold the agent - so you'll experience both _building_ a custom agent **and** _using_ Copilot as your coding partner.
 
 ### What you will learn
 
@@ -23,9 +23,9 @@ You will use GitHub Copilot itself to help you scaffold the agent — so you'll 
 
 ---
 
-## Step 1 — Clone the Starter Repository
+## Step 1 - Clone the Starter Repository
 
-The starter repo already contains a `.github/instructions/custom-agent.instructions.md` file. This instruction file teaches Copilot _how_ to scaffold high-quality agent definitions for you — so you don't have to memorize the format / good conventions yourself.
+The starter repo already contains a `.github/instructions/custom-agent.instructions.md` file. This instruction file teaches Copilot _how_ to scaffold high-quality agent definitions for you - so you don't have to memorize the format / good conventions yourself.
 
 1. Open a **terminal** (Command Prompt, PowerShell, or your preferred shell).
 2. Navigate to the folder where you keep your projects - for example:
@@ -53,7 +53,7 @@ The starter repo already contains a `.github/instructions/custom-agent.instructi
 
 ---
 
-## Step 2 — Open the Repository in VS Code
+## Step 2 - Open the Repository in VS Code
 
 1. While still in your terminal inside the `CustomAgent-Labs` folder, run:
 
@@ -68,7 +68,7 @@ The starter repo already contains a `.github/instructions/custom-agent.instructi
 ```
    CustomAgent-Lab/
    ├── .github/
-   │   ├── agents/          ← (empty — you will add your agent here)
+   │   ├── agents/          ← (empty - you will add your agent here)
    │   └── instructions/
    │       └── custom-agent.instructions.md
    ├── README.md
@@ -82,16 +82,16 @@ The starter repo already contains a `.github/instructions/custom-agent.instructi
 
 ---
 
-## Step 3 — Read the Instruction File (Optional but Recommended)
+## Step 3 - Read the Instruction File (Optional but Recommended)
 
 Before asking Copilot to generate anything, take a minute to skim the instruction file so you understand the conventions.
 
 1. In VS Code, open `.github/instructions/custom-agent.instructions.md`.
 2. Scan through the document. Key things to notice:
-   - **Agent Archetypes** — Agent, Orchestrator, Subagent. For this lab you will build a simple **Agent**.
-   - **Frontmatter** — Every `.agent.md` file starts with YAML frontmatter (`name`, `description`, `model`, `tools`).
-   - **Body Sections** — Role line, Context, DO / DON'T, Workflow, Output Files, Validation Checklist.
-   - **State Files** — Agents write progress to `./output/state/`.
+   - **Agent Archetypes** - Agent, Orchestrator, Subagent. For this lab you will build a simple **Agent**.
+   - **Frontmatter** - Every `.agent.md` file starts with YAML frontmatter (`name`, `description`, `model`, `tools`).
+   - **Body Sections** - Role line, Context, DO / DON'T, Workflow, Output Files, Validation Checklist.
+   - **State Files** - Agents write progress to `./output/state/`.
 
 > You do _not_ need to memorise any of this. Copilot has already loaded the instruction file because it matches the `applyTo: "**/*.agent.md"` pattern. When you create a file ending in `.agent.md`, Copilot will automatically follow these rules.
 
@@ -99,14 +99,14 @@ Before asking Copilot to generate anything, take a minute to skim the instructio
 
 ---
 
-## Step 4 — Use Copilot to Write the Requirements Document
+## Step 4 - Use Copilot to Write the Requirements Document
 
 A good practice before building any agent is to describe _what_ it should do in a short requirements document. You will use Copilot Chat to help you draft this.
 
-### 4.1 — Ask Copilot to draft the requirements
+### 4.1 - Ask Copilot to draft the requirements
 
 1. Open the **Copilot Chat** panel
-2. Make sure you're in **Plan** mode — click the agent selector at the bottom of the chat panel and choose **Plan** if it is not already selected. We use Plan mode here because we are _planning_ what the agent should do, not asking Copilot to run tools or edit files.
+2. Make sure you're in **Plan** mode - click the agent selector at the bottom of the chat panel and choose **Plan** if it is not already selected. We use Plan mode here because we are _planning_ what the agent should do, not asking Copilot to run tools or edit files.
 
 **screenshot**
 
@@ -128,7 +128,7 @@ A good practice before building any agent is to describe _what_ it should do in 
    - Example input and output
    ```
 
-4. Copilot will generate a markdown document in the chat. **Review the output** — it should contain sections similar to:
+4. Copilot will generate a markdown document in the chat. **Review the output** - it should contain sections similar to:
 
    | Section                     | What to look for                                             |
    | --------------------------- | ------------------------------------------------------------ |
@@ -146,7 +146,7 @@ A good practice before building any agent is to describe _what_ it should do in 
 
 **screenshot**
 
-### 4.2 — Review and refine
+### 4.2 - Review and refine
 
 Read through the requirements. Feel free to edit them by hand or ask Copilot follow-up questions such as:
 
@@ -160,11 +160,11 @@ Save the file when you are satisfied.
 
 ---
 
-## Step 5 — Use Copilot to Create the Agent Definition File
+## Step 5 - Use Copilot to Create the Agent Definition File
 
 Now you will create the actual `.agent.md` file that defines the Poet Agent. The instruction file in the repo will guide Copilot to produce a well-structured agent that follows all the conventions.
 
-### 5.1 — Create the file in the correct location
+### 5.1 - Create the file in the correct location
 
 Custom agents live in `.github/agents/`.
 
@@ -176,7 +176,7 @@ Custom agents live in `.github/agents/`.
 
 **screenshot**
 
-### 5.2 — Ask Copilot to scaffold the agent
+### 5.2 - Ask Copilot to scaffold the agent
 
 1. Make sure the file `poet.agent.md` is **open and active** in the editor (click on its tab).
 2. Open **Copilot Chat**
@@ -194,7 +194,7 @@ Custom agents live in `.github/agents/`.
 
 **screenshot**
 
-### 5.3 — Review the generated agent
+### 5.3 - Review the generated agent
 
 Walk through the file and verify these key elements are present:
 
@@ -211,15 +211,15 @@ Walk through the file and verify these key elements are present:
 
 ---
 
-## Step 6 — Test the Poet Agent
+## Step 6 - Test the Poet Agent
 
 Time to take your new agent for a spin!
 
-### 6.1 — Open Copilot Chat
+### 6.1 - Open Copilot Chat
 
 1. Open **Copilot Chat**
 
-### 6.2 — Invoke the Poet Agent
+### 6.2 - Invoke the Poet Agent
 
 1. Select **Poet Agent** from the dropdown (where it normally says Agent | Ask | Plan)
 
@@ -235,7 +235,7 @@ Time to take your new agent for a spin!
 
 **screenshot**
 
-### 6.3 — Try a few more subjects
+### 6.3 - Try a few more subjects
 
 Try different subjects to see the agent in action:
 
@@ -251,11 +251,11 @@ debugging at 2am
 the joy of merge conflicts
 ```
 
-### 6.4 — Verify the output files
+### 6.4 - Verify the output files
 
 If the agent is following the conventions correctly, it should have created a state file.
 
-Note — a state file is created because our instruction files mandate it. We could remove this requirement for simple agents.
+Note - a state file is created because our instruction files mandate it. We could remove this requirement for simple agents.
 They are useful when you have complex agents or multi-agent orchestrations.
 
 1. In the Explorer panel, look for the `output/state/` folder.
@@ -268,11 +268,11 @@ They are useful when you have complex agents or multi-agent orchestrations.
 
 ---
 
-## Step 7 — Refine and Iterate
+## Step 7 - Refine and Iterate
 
 One of the great things about custom agents is that you can keep improving them. Here are some ideas to try:
 
-### 7.1 — Improve the limerick quality
+### 7.1 - Improve the limerick quality
 
 Open `poet.agent.md` and ask Copilot:
 
@@ -282,7 +282,7 @@ generates three candidate limericks and picks the funniest one
 to present to the user?
 ```
 
-### 7.2 — Add edge-case handling
+### 7.2 - Add edge-case handling
 
 ```
 Update the Poet Agent DO / DON'T section to handle these edge cases:
@@ -291,7 +291,7 @@ Update the Poet Agent DO / DON'T section to handle these edge cases:
   keep it respectful
 ```
 
-### 7.3 — Change the model
+### 7.3 - Change the model
 
 If you want to experiment with different output quality, try changing the `model` field in the frontmatter:
 
@@ -315,10 +315,10 @@ Congratulations! 🎉 You have completed the lab. Here is what you built:
 
 ### Key takeaways
 
-1. **Custom agents are just Markdown files** — no servers, no APIs, no deployments. You define behaviour in an `.agent.md` file and Copilot does the rest.
-2. **Instruction files supercharge Copilot** — the `custom-agent.instructions.md` file taught Copilot the exact conventions and structure to follow, so you didn't have to remember them.
-3. **Start with requirements** — writing a `poet-requirements.md` first helps you think clearly about what the agent should (and should not) do. It also gives Copilot better context to scaffold the agent.
-4. **Iterate quickly** — because agents are Markdown, you can edit, test, and refine them in seconds.
+1. **Custom agents are just Markdown files** - no servers, no APIs, no deployments. You define behaviour in an `.agent.md` file and Copilot does the rest.
+2. **Instruction files supercharge Copilot** - the `custom-agent.instructions.md` file taught Copilot the exact conventions and structure to follow, so you didn't have to remember them.
+3. **Start with requirements** - writing a `poet-requirements.md` first helps you think clearly about what the agent should (and should not) do. It also gives Copilot better context to scaffold the agent.
+4. **Iterate quickly** - because agents are Markdown, you can edit, test, and refine them in seconds.
 
 ---
 

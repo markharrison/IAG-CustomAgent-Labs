@@ -36,22 +36,22 @@ The user gives the Funny Agent a subject (e.g. "cats", "Kubernetes", "Monday mor
 
 You will use the same starter repository from Lab 1. If you no longer have it, re-clone it now (see Lab 1, Step 1).
 
-1. Open a **terminal** and navigate to the `xxx-custom-agent-starter` folder:
+1. Open a **terminal** and navigate to the `CustomAgent-Labs` folder - for example:
 
-   ```bash
-   cd ~/Desktop/xxx-custom-agent-starter
-   ```
+```powershell
+   cd c:\dev\CustomAgent-Labs
+```
 
 2. Open the folder in VS Code:
 
-   ```bash
+```powershell
    code .
-   ```
+```
 
 3. In the **Explorer** panel, confirm the folder structure includes:
 
-   ```
-   xxx-custom-agent-starter/
+```
+   CustomAgent-Labs/
    ├── .github/
    │   ├── agents/
    │   │   └── poet.agent.md          ← from Lab 1
@@ -60,7 +60,7 @@ You will use the same starter repository from Lab 1. If you no longer have it, r
    ├── poet-requirements.md
    ├── README.md
    └── ...
-   ```
+```
 
 4. Open **Copilot Chat** and confirm it is active.
 
@@ -110,6 +110,8 @@ Key concepts:
 - **State files** — Subagents communicate through state files in `./output/state/`. The Joker writes `01-joker.md` containing the joke. The Code agent reads that file, then writes `02-code.md` and the HTML deliverable.
 - **Gates** — Between each step the orchestrator can pause for approval or auto-continue.
 
+> **Tip:**  - delete any existing content in ./output/state/ that is carried over from lab1
+
 **screenshot**
 
 ---
@@ -146,9 +148,8 @@ Just like in Lab 1, you will start by writing a requirements document. This time
       ./output/joke.html
    4. Funny Agent presents the result to the user.
 
-   Please write a funny-requirements.md file. Include:
+   Please write the requirements. Include:
    - A short description of the system
-   - The target user
    - Architecture overview (orchestrator + 2 subagents)
    - Functional requirements for each agent
    - Non-functional requirements (tone, format, constraints)
@@ -160,7 +161,6 @@ Just like in Lab 1, you will start by writing a requirements document. This time
    | Section                         | What to look for                                                           |
    | ------------------------------- | -------------------------------------------------------------------------- |
    | Description                     | One-liner explaining the Funny Agent pipeline.                             |
-   | Target User                     | Anyone who wants a quick joke presented on a fun web page.                 |
    | Architecture Overview           | Diagram or table showing Orchestrator → Joker → Code flow.                 |
    | Functional Requirements (Joker) | Accepts a subject, returns a joke. Clean humour, no offensive content.     |
    | Functional Requirements (Code)  | Reads the joke, produces a styled HTML page. Self-contained (inline CSS).  |
@@ -203,11 +203,11 @@ Now you will ask Copilot to create all three agents — the orchestrator and bot
 
 3. Type the following prompt:
 
-   ```
+```
    Using #file:funny-requirements.md and #file:custom-agent.instructions.md,
    create all the agents for the Funny Agent pipeline —
    the orchestrator and both subagents.
-   ```
+```
 
 4. Copilot will create the three files. Review each one as it appears — accept the changes and save.
 
@@ -253,7 +253,7 @@ Before testing, confirm all files are in place.
 
 1. In the Explorer panel, verify:
 
-   ```
+```
    .github/
    ├── agents/
    │   ├── _subagents/
@@ -263,7 +263,7 @@ Before testing, confirm all files are in place.
    │   └── poet.agent.md            ← from Lab 1
    └── instructions/
        └── custom-agent.instructions.md
-   ```
+```
 
 2. Make sure all three new files are saved.
 
@@ -287,9 +287,9 @@ Time to run the full pipeline!
 
 2. Type a subject:
 
-   ```
+```
    cats who judge you silently
-   ```
+```
 
 3. Press Enter and watch the orchestrator work through the pipeline.
 
@@ -312,14 +312,14 @@ As the Funny Agent runs, you should see it:
 
 1. In the Explorer panel, expand the `output/` folder. You should see:
 
-   ```
+```
    output/
    ├── state/
    │   ├── 00-funny-agent.md     ← Orchestrator pipeline state
    │   ├── 01-joker.md           ← Joker's state (contains the joke)
    │   └── 02-code.md            ← Code Agent's state
    └── joke.html                 ← The deliverable — your joke web page!
-   ```
+```
 
 2. Open `01-joker.md` — confirm it contains the joke text under a `## Joke` heading.
 3. Open `02-code.md` — confirm it shows all phases checked off.
@@ -340,18 +340,18 @@ As the Funny Agent runs, you should see it:
 Run the pipeline a few more times with different subjects:
 
 ```
-debugging at 3am
+   debugging at 3am
 ```
 
 ```
-the cloud (it's just someone else's computer)
+   the cloud (it's just someone else's computer)
 ```
 
 ```
-meetings that could have been emails
+   meetings that could have been emails
 ```
 
-Each run overwrites the previous output files, so you always see the latest joke.
+> **Tip:** Good practice for each new run is to delete previous output files - but you will find they get overwritten if this isnt done. 
 
 **screenshot**
 

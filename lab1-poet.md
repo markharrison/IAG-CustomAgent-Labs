@@ -28,26 +28,24 @@ You will use GitHub Copilot itself to help you scaffold the agent — so you'll 
 The starter repo already contains a `.github/instructions/custom-agent.instructions.md` file. This instruction file teaches Copilot _how_ to scaffold high-quality agent definitions for you — so you don't have to memorize the format / good conventions yourself.
 
 1. Open a **terminal** (Command Prompt, PowerShell, or your preferred shell).
-2. Navigate to the folder where you keep your projects:
+2. Navigate to the folder where you keep your projects - for example:
 
-   ```bash
-   cd ~/Desktop
-   ```
+```powershell
+   cd c:\dev
+```
 
 3. Clone the repository:
 
-   ```bash
-   git clone https://github.com/<org>/xxx-custom-agent-starter.git
-   ```
-
-   > Replace `<org>` with the GitHub organisation or username that hosts the repo.
+```powershell
+   git clone https://github.com/markharrison/CustomAgent-Labs.git
+```
 
 4. Confirm the clone succeeded:
 
-   ```bash
-   cd xxx-custom-agent-starter
-   ls -la .github/instructions/
-   ```
+```powershell
+   cd CustomAgent-Labs
+   dir .github\instructions
+```
 
    You should see the file `custom-agent.instructions.md` in the listing.
 
@@ -57,25 +55,25 @@ The starter repo already contains a `.github/instructions/custom-agent.instructi
 
 ## Step 2 — Open the Repository in VS Code
 
-1. While still in your terminal inside the `xxx-custom-agent-starter` folder, run:
+1. While still in your terminal inside the `CustomAgent-Labs` folder, run:
 
-   ```bash
+```powershell
    code .
-   ```
+```
 
    This opens the current folder as a VS Code workspace.
 
 2. In the **Explorer** panel (left sidebar), verify you can see the following structure:
 
-   ```
-   xxx-custom-agent-starter/
+```
+   CustomAgent-Lab/
    ├── .github/
    │   ├── agents/          ← (empty — you will add your agent here)
    │   └── instructions/
    │       └── custom-agent.instructions.md
    ├── README.md
    └── ...
-   ```
+```
 
 3. Open the **Copilot Chat** panel:
    - Confirm that Copilot Chat is active and responds to messages.
@@ -142,8 +140,9 @@ A good practice before building any agent is to describe _what_ it should do in 
 
 5. When you are happy with the result, click the **Open in Editor** button at the top of the generated code block. This opens the content in a new editor tab.
 
-6. Save the editor tab as **`poet-requirements.md`** at the root of the repository:
-   - Press **`Ctrl+S`** / **`Cmd+S`** → choose the repository root folder → type `poet-requirements.md` → **Save**.
+6. Save the editor tab as **`poet-requirements.md`** at the root of the workspace:
+   - It may not default to the workspace root - so navigate to the correct directory
+   - Press **`Ctrl+S`** / **`Cmd+S`** → choose the repository root folder → overwrite the existing `poet-requirements.md` → **Save**.
 
 **screenshot**
 

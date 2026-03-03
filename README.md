@@ -1,4 +1,4 @@
-# xxx-custom-agent-starter
+# CustomAgent-Labs
 
 Starter repository for the **GitHub Copilot Custom Agents** hands-on labs.
 

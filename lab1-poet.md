@@ -139,7 +139,7 @@ You can also chose the model to use. The screenshot shows Clause Opus 4.6 but ex
 
 ![screenshot](images/poet6.jpg)
 
-5. In Ask mode - the agent cannot write to the file. Two options depending on how the agent responds. Either:
+5. In Ask mode - the agent cannot write to the file. You have two options depending on how the agent responds. Either:
 
 - copy the suggested requirements to the `poet-requirements.md` file and save it
 - if given the option 'Open in Editor' select that and then save to `poet-requirements.md`
@@ -190,7 +190,7 @@ Create a new Chat session to start with a clean slate — this avoids irrelevant
 
 ![screenshot](images/poet10.jpg)
 
-4. Copilot will generate a complete `poet.agent.md` file. It uses rge `custom-agents.instructions.md` file to help scaffold the agent.
+4. Copilot will generate a complete `poet.agent.md` file. It uses the `custom-agents.instructions.md` file to help scaffold the agent.
 
 ![screenshot](images/poet11.jpg)
 

@@ -54,7 +54,9 @@ You will use the same starter repository from Lab 1. If you no longer have it, r
    CustomAgent-Labs/
    ├── .github/
    │   ├── agents/
-   │   │   └── poet.agent.md          ← from Lab 1
+   │   │   ├── _subagents/
+   │   │   │   └── ...
+   │   │   └── ...
    │   └── instructions/
    │       └── custom-agent.instructions.md
    ├── README.md

@@ -61,7 +61,7 @@ You should see the file `custom-agent.instructions.md` in the listing.
 
 This opens the current folder as a VS Code workspace.
 
-2. In the **Explorer** panel (left sidebar), verify you can see the following structure:
+2. In the **Explorer** panel (left sidebar), confirm the folder structure includes:
 
 ```
    CustomAgent-Lab/

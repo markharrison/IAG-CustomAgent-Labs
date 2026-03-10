@@ -54,14 +54,13 @@ You will use the same repository from Labs 1 and 2. If you no longer have it, re
    ├── .github/
    │   ├── agents/
    │   │   ├── _subagents/
-   │   │   │   ├── joker.agent.md
-   │   │   │   └── code.agent.md
-   │   │   ├── poet.agent.md          ← from Lab 1
-   │   │   └── funny.agent.md         ← from Lab 2
+   │   │   │   └── ...
+   │   │   └── ...
    │   └── instructions/
    │       └── custom-agent.instructions.md
    ├── README.md
    └── ...
+
 ```
 
 4. Open **Copilot Chat** and confirm it is active.
@@ -111,17 +110,32 @@ The Quiz Agent generates the same quiz content regardless of format. The skill i
 
 ### 2.2 - Verify the skills are installed
 
-1. In the **Explorer** panel, expand `.github/skills/`. You should see:
+1. In the **Explorer** panel, expand `.github/skills/`. You should see the skills hacve been addded
 
 ```
    CustomAgent-Labs/
    ├── .github/
    │   ├── agents/
    │   │   ├── _subagents/
-   │   │   │   ├── joker.agent.md
-   │   │   │   └── code.agent.md
-   │   │   ├── poet.agent.md          ← from Lab 1
-   │   │   └── funny.agent.md         ← from Lab 2
+   │   │   │   └── ...
+   │   │   └── ...
+   │   ├── instructions/
+   │   │   └── custom-agent.instructions.md
+   │   └── skills/
+   │       ├── pptx/
+   │       │   └── ...
+   │       └── frontend-slides/
+   │           └── ...
+   ├── README.md
+   └── ...
+
+
+   CustomAgent-Labs/
+   ├── .github/
+   │   ├── agents/
+   │   │   ├── _subagents/
+   │   │   │   └── ...
+   │   │   └── ...
    │   ├── instructions/
    │   │   └── custom-agent.instructions.md
    │   └── skills/

@@ -100,10 +100,10 @@ The Quiz Agent generates the same quiz content regardless of format. The skill i
 
 ```
 
-3. Move the installed skills into the `.github/skills` folder (our project convention). If using PowerShell:
+3. Move the installed skills into the `.github/skills` folder (our project convention) :
 
 ```powershell
-   Move-Item -Force .\.agents\skills .\.github\skills; Remove-Item -Recurse -Force .\.agents
+   robocopy .\.agents\skills .\.github\skills /E /MOVE
 
 ```
 

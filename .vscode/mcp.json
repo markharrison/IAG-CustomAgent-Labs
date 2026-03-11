@@ -1,0 +1,86 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "figma-api-key",
+      "description": "Figma Personal Access Token",
+      "password": true
+    },
+    {
+      "type": "promptString",
+      "id": "jira-url",
+      "description": "Jira instance URL (e.g. https://your-domain.atlassian.net)"
+    },
+    {
+      "type": "promptString",
+      "id": "jira-username",
+      "description": "Jira username or email"
+    },
+    {
+      "type": "promptString",
+      "id": "jira-api-token",
+      "description": "Jira API token",
+      "password": true
+    },
+    {
+      "type": "promptString",
+      "id": "confluence-url",
+      "description": "Confluence instance URL (e.g. https://your-domain.atlassian.net/wiki)"
+    },
+    {
+      "type": "promptString",
+      "id": "confluence-username",
+      "description": "Confluence username or email"
+    },
+    {
+      "type": "promptString",
+      "id": "confluence-api-token",
+      "description": "Confluence API token",
+      "password": true
+    }
+  ],
+  "servers": {
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "figma": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=${input:figma-api-key}",
+        "--stdio"
+      ]
+    },
+    "atlassian": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mcp-atlassian"],
+      "env": {
+        "JIRA_URL": "${input:jira-url}",
+        "JIRA_USERNAME": "${input:jira-username}",
+        "JIRA_API_TOKEN": "${input:jira-api-token}",
+        "CONFLUENCE_URL": "${input:confluence-url}",
+        "CONFLUENCE_USERNAME": "${input:confluence-username}",
+        "CONFLUENCE_API_TOKEN": "${input:confluence-api-token}"
+      }
+    },
+    "memory": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "sequentialThinking": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    }
+  }
+}

@@ -23,7 +23,7 @@ The Shopper Agent will use the **Playwright MCP server** to visit real grocery w
 | **GitHub Copilot**            | Active subscription.                                                       |
 | **VS Code**                   | Always use the latest.                                                     |
 | **Node.js**                   | Required for installing MCP servers. Version 18+ recommended.              |
-| **npx**                       | Comes with Node.js - used to run MCP servers.                              |
+| **npx**                       | Comes with Node.js - used to run Playwright MCP .                          |
 
 ---
 
@@ -94,14 +94,13 @@ You will use the same repository from Labs 1, 2, and 3. If you no longer have it
    │   ├── agents/
    │   └── instructions/
    │       └── custom-agent.instructions.md
-   ├── lab1-poet.md
+   ├── .vscode/
+   │   └── mcp.json
    ├── README.md
    └── ...
 ```
 
 4. Open **Copilot Chat** and confirm it is active.
-
-**_TODO Screenshot_**
 
 ---
 

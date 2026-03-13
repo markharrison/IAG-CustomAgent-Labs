@@ -2,19 +2,24 @@
 
 Starter repository for the **GitHub Copilot Custom Agents** hands-on labs.
 
-## Labs
+## Overview
 
 A custom agent in GitHub Copilot is a user-defined agent described in a `.agent.md` markdown file that you place in your repository. It lets you create specialized, reusable AI assistants tailored to specific tasks or workflows.
 
-Key characteristics:
+A `custom-agent.instructions.md` instructions file enforces good practices for the agent definition. Key characteristics include:
 
 - Defined in markdown - A .agent.md file with YAML frontmatter (name, description, model, tools) followed by a markdown body that defines the agent's behavior, constraints, and workflow.
+
 - Three archetypes:
-  - Agent - A self-contained assistant that does one job end-to-end (e.g., a poetry generator).
+  - Agent - A self-contained assistant that does one job end-to-end.
   - Orchestrator - Coordinates a multi-step pipeline by delegating to subagents, with approval gates between steps.
   - Subagent - A specialist that handles one step in an orchestrator's pipeline; never invoked directly by users.
+
 - Configurable tools & models - You specify which tools (file read/edit, search, terminal, web, MCP servers) and which AI model the agent should use.
+
 - State tracking - Agents write state/progress files so work can be resumed, reviewed, or reverted.
+
+## Labs
 
 This workspace contains four hands-on labs for building custom agents:
 

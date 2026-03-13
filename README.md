@@ -31,6 +31,17 @@ The Wave 2 Software Engineer
 
 ![alt text](images/slide1.jpg)
 
+GitHub Copilot provides the following customization primitives. Each serves a distinct purpose and loads at different points in your workflow:
+
+| Primitive                        | Location                                                       | Purpose                                                      |
+| -------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------ |
+| **Always-on Instructions**       | `.github/copilot-instructions.md`, `AGENTS.md`, or `CLAUDE.md` | Global rules applied to every Copilot request                |
+| **File-based Instructions**      | `.github/instructions/*.instructions.md`                       | Rules that activate when working with specific file patterns |
+| **Prompts**                      | `.github/prompts/*.prompt.md`                                  | Reusable task templates invoked as slash commands            |
+| **Skills**                       | `.github/skills/*/SKILL.md`                                    | Procedural knowledge Copilot can discover and apply          |
+| **Custom Agents**                | `.github/agents/*.md`                                          | Specialized AI personas with defined behaviors               |
+| **MCP (Model Context Protocol)** | `.vscode/mcp.json`                                             | Connections to external tools, APIs, and data sources        |
+
 The Agentic DevOps stack
 
 ![alt text](images/slide2.jpg)

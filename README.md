@@ -27,7 +27,7 @@ This workspace contains four hands-on labs for building custom agents:
 
 ## Slides
 
-The Wave 2 Software Engineer
+### The Wave 2 Software Engineer
 
 ![alt text](images/slide1.jpg)
 
@@ -42,6 +42,6 @@ GitHub Copilot provides the following customization primitives. Each serves a di
 | **Custom Agents**                | `.github/agents/*.md`                                          | Specialized AI personas with defined behaviors               |
 | **MCP (Model Context Protocol)** | `.vscode/mcp.json`                                             | Connections to external tools, APIs, and data sources        |
 
-The Agentic DevOps stack
+### The Agentic DevOps stack
 
 ![alt text](images/slide2.jpg)

@@ -348,8 +348,6 @@ As the Quiz Agent runs, you should see it:
 4. **Create the slides** — produces 11 slides (title slide + question/answer pairs) in your chosen format
 5. **Present the result** — shows you a summary and points you to the output file
 
-**screenshot**
-
 ### 6.5 - Check the output files
 
 1. In the Explorer panel, expand the `output/` folder. You should see:

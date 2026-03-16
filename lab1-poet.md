@@ -239,8 +239,6 @@ Create a new Chat session to start with a clean slate.
 
 3. Press Enter and watch the agent respond with a limerick!
 
-**screenshot**
-
 ### 6.3 - Verify the output files
 
 If the agent is following the conventions correctly, it should have created a state file.

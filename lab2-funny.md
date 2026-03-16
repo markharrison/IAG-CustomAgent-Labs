@@ -221,8 +221,6 @@ Create a new Chat session to start with a clean slate — this avoids irrelevant
 
 4. Copilot will create the three files. Review each one as it appears - accept the changes and save.
 
-**screenshot**
-
 ### 4.2 - Verify the generated agents
 
 Walk through each file and spot-check these key elements:

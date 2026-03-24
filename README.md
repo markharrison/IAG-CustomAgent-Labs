@@ -1,5 +1,9 @@
 # GitHub Custom Agents - Hands on Labs
 
+UPDATED <https://markharrison.uk/lab-customagents/>
+
+---
+
 Starter repository for the **GitHub Copilot Custom Agents** hands-on labs.
 
 ## Overview
